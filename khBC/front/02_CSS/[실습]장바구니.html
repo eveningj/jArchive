@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel = "stylesheet" href = "css/cart.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet">
+</head>
+<body>
+        <div class = "wrap">
+        <div class = "header">
+            <div class = "header-top">
+                <div class = "logo">
+                    <a href = "#">ICE-MALL</a>
+                </div>
+                <div class = "search-box">
+                    <form action = "search.html" method="get">
+                        <input type = "text" name = "keyword" placeholder = "검색어를 입력하세요">
+                        <button type = "submit">
+                            <span class="material-icons">search</span>
+                    </button>
+                    </form>
+                </div>
+                <div class = "link-box">
+                    <a href = "#">로그인</a>
+                    <a href = "#">회원가입</a>
+                    <a href = "#">장바구니</a>
+                </div>
+            </div>
+            <div class = "nav">
+                <ul>
+                    <li><a href = "#">메뉴1</a></li>
+                    <li><a href = "#">메뉴2</a></li>
+                    <li><a href = "#">메뉴3</a></li>
+                    <li><a href = "#">메뉴4</a></li>
+                    <li><a href = "#">메뉴5</a></li>
+                    <li><a href = "#">메뉴6</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class = "content">
+            <div class = "cart-title">
+                <h3>장바구니</h3>
+            </div>
+            <div class = "cart-left">
+                <div class = "cart-select">
+                    <input type = "checkbox" name = "productCheck" id = "all-select">
+                    <label for = "all-select">전체선택</label>
+                    <button class = "delete">선택삭제</button>
+                </div>
+                <div class = "cart-list-wrap">
+                    <div class = "product-list">
+                        <div class = "product">
+                            <div class = "check">
+                                <input type = "checkbox" name = "productCheck" id = "product1">
+                            </div>
+                            <div class = "product-attri">
+                                <img src = "img/ice1.png">
+                                <a href = "#">엄마는 외계인</a>
+                                <button class = "option-select">옵션변경</button>
+                                <h4>가격 : 0000원</h4>
+                                <div class = "count">
+                                <button>-</button>
+                                1
+                                <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "product">
+                            <div class = "check">
+                                <input type = "checkbox" name = "productCheck" id = "product2">
+                            </div>
+                            <div class = "product-attri">
+                                <img src = "img/ice2.png">
+                                <a href = "#">아몬드봉봉</a>
+                                <button class = "option-select">옵션변경</button>
+                                <h4>가격 : 0000원</h4>
+                                <div class = "count">
+                                <button>-</button>
+                                1
+                                <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "product">
+                            <div class = "check">
+                                <input type = "checkbox" name = "productCheck" id = "product3">
+                            </div>
+                            <div class = "product-attri">
+                                <img src = "img/ice3.png">
+                                <a href = "#">민트초코</a>
+                                <button class = "option-select">옵션변경</button>
+                                <h4>가격 : 0000원</h4>
+                                <div class = "count">
+                                <button>-</button>
+                                1
+                                <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "cart-remote">
+                <div class = "remote-title">
+                    <h2>결제금액</h2>
+                </div>
+                <div class = "remote-content">
+                    <h3>상품금액</h3>
+                    <p>0000원</p>
+                    <h3>상품할인금액</h3>
+                    <p>0000원</p>
+                    <h3>배송비</h3>
+                    <p>0000원</p>
+                <hr>
+                    <h2>결제예정금액</h2>
+                    <h4 class = "total">0000원</h4>
+                </div>
+                <div class = "remote-button">
+                    <form action = "pay.html" method = "post" name = "payment">
+                        <input type ="submit" value = "결제"></input>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class = "footer">
+            <div>
+            <p>상호명 : (주)ICE-MALL</p>
+            <p>소재지 : 서울시 영등포구 선유로 57 이레빌딩 19F</p>
+            <p>고객센터 : 1577-0001</p>
+            <p>EMAIL : admin@icemall.com</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

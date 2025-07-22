@@ -1,0 +1,78 @@
+/*
+속성 
+[속성 이름 ] : 해당하는 속성을 가지고 있으면 
+[속성이름 = 속성값] : 해당 속성의 값이 일치하면
+*/
+div[name=name2]{
+    color : blueviolet;
+}
+[name=name1]{
+    color: brown;
+}
+/*
+[class^=div] {
+    background-color : bisque
+}
+    */
+    .div1 > h2{
+        color: red;
+    }
+/* 후손 선택자 */
+    .div1 li{
+        background-color: coral;
+    }
+
+    .div1>.ul1>li{
+        color:blue;
+    }
+
+    .div1>*{
+        background-color: antiquewhite;
+    }
+
+    /*동위 선택자*/
+    /*선택한 것의 바로 다음요소 (선택한 것은 포함 안됨)*/
+    .div2>.test3+div{
+        color: blue;
+    }
+    .div2>.test1+div{
+        color: red;
+    }
+    /*동등한 위치에 있는 다음 모든 것 (본인 포함)*/
+    /*
+    .div2>.test3~div{
+        background-color: blueviolet;
+    }
+*/
+    .div2>div+div{
+        background-color: aquamarine;
+    }
+
+    /* 반응 선택자*/
+    .action-div{
+        width: 300px;
+        height: 300px;
+        background-color: tomato;
+    }
+
+    .active-test:active{
+        background-color: yellow;
+    }
+    .hover-test:hover{
+        background-color: yellowgreen;
+    }
+    /* 상태 선택자 */
+    input[name=hobby]:checked{
+        width : 20px;
+        height: 20px;
+    }
+    input[name=id]:focus{
+        background-color: midnightblue;
+    }
+    input[name=test1]:read-only{
+        background-color: grey;
+    }
+    input[name=test2]:disabled{
+        background-color: black;
+    }
+        

@@ -1,0 +1,90 @@
+@font-face {
+    font-family: nn_r;
+    src: url(../Nanum_Gothic/NanumGothic-Regular.ttf);
+}
+@font-face {
+    font-family: nn_b;
+    src: url(../Nanum_Gothic/NanumGothic-Bold.ttf);
+}
+@font-face {
+    font-family: nn_eb;
+    src: url(../Nanum_Gothic/NanumGothic-ExtraBold.ttf);
+}
+/* 기본 세팅 */
+.agree-name>img {
+    width: 18px;
+    height: 18px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: nn_r;
+    color : #1e1e1e;
+}
+.agree{
+    margin : 15px;
+}
+.agree-all-wrap{
+    background-color: #ddd;
+    padding: 80px;
+}
+.agree-wrap{
+    background-color: #fff;
+    width: 800px;
+    margin : 0 auto;
+    border-radius: 12px;
+}
+.agree-title{
+}
+.agree-title>h1{
+    font-family: nn_eb;
+    font-size: 36px;
+    text-align: center;
+    color : #003399;
+    padding: 25px;
+}
+.agree-title>h3{
+    padding: 15px;
+    font-family: nn_b;
+    text-align: center;
+}
+.agree-content{
+    width: 600px;
+    margin: 0 auto;
+}
+.agree-name{
+}
+.agree-explain{
+    width: 90%;
+    margin: 15px auto;
+    height : 200px;
+    overflow-y: auto;
+    font-size: 12px;
+    border: 1px solid #1e1e1e;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.agree-check{
+    width: 90%;
+    margin: 0 auto;
+    text-align: right;
+}
+.agree-btn-box{
+    text-align: center;
+    padding: 30px;
+}
+.agree-btn-box>button{
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: #003399;
+    color: #fff;
+    font-family: nn_b;
+    cursor: pointer;
+    font-size: 16px;
+}
+.agree-name>span{
+    font-family: nn_b;
+}
+
+/* 섹션 별로.*/

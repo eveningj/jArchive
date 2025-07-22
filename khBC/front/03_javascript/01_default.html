@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsTest</title>
+</head>
+<body>
+    <h2>자바스크립트 테스트</h2>
+    <hr>
+    <button id = "btn1" onclick = "console.log('버튼1 누름');">버튼1</button>
+    <button id = "btn2">버튼2</button>
+    <button id = "btn3">버튼3</button>
+    <script>
+        document.querySelector("#btn2").addEventListener("click",function(){
+            console.log("버튼2 누름");
+        });
+        </script>
+    <script src = "js/01_test.js"></script>
+    <script src = "js/08_object.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,186 @@
+/*
+#9ECAD6 연파
+#748DAE 파
+#F5CBCB 분
+#FFEAEA 연분
+#09122C 껌
+#7B4019 초코
+*/
+
+:root{
+    --color1 : #09122C;
+    --color2 : #D9A299;
+    --color3 : #9ECAD6;
+    --color4 : #f58282;
+    --color5 : #FAF7F3;
+    --color6 : #7B4019;
+}
+*{
+    margin : 0;
+    padding: 0;
+    outline: none;
+    color: var(--color1);
+}
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+.header-top{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.logo{
+    width: 300px;
+    height: 100px;
+    float: left;
+}
+.logo>a{
+    font-size : 60px;
+    line-height: 100px;
+    font-weight: 900;
+    color: var(--color6);
+    text-decoration: none;
+}
+.search-box{
+    width: 600px;
+    height: 100px;
+    float: left;
+}
+.search-box>form{
+    text-align: center;
+    line-height: 100px;
+}
+.search-box>form>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search-box>form>button>span{
+}
+.search-box>form>input{
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid var(--color4);
+    font-size: 17px;
+}
+.search-box>form>input:focus{
+    border-bottom: 2px solid var(--color2);
+}
+.link-box{
+    width: 300px;
+    height: 100px;
+    float: left;
+    text-align: right;
+}
+.link-box>a{
+    line-height: 100px;
+    margin-left: 25px ;
+    font-weight: 900;
+    text-decoration: none;
+}
+.link-box>a:hover{
+    color: var(--color2);
+}
+.nav{
+    background-color: var(--color5);
+}
+.nav>ul{
+    overflow: hidden;
+    list-style-type: none;
+    width : 1200px;
+    margin : 0 auto;
+}
+.nav>ul>li{
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.nav>ul>li>a{
+    color: var(--color6);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+.nav>ul>li>a:hover{
+    color: var(--color4)
+}
+
+
+.footer{
+    background-color: var(--color5);
+}
+.footer>div{
+    width : 1200px;
+    margin: 0 auto;
+    padding: 30px 0px;
+}
+.footer>p{
+    padding: 5px 0px;
+    font-size : 14px;
+    color : var(--color5);
+}
+/* header, footer 작업 끝*/
+.content{
+    width: 1200px;
+    margin : 0 auto;
+    padding-top: 140px;
+}
+.content-title>h3{
+    padding : 30px 0px;
+    text-align: center;
+}
+.product-list>h3{
+    padding: 30px 0px;
+    text-align: center;
+}
+.product-list{
+}
+.product-list>ul{
+    overflow: hidden;
+    list-style-type: none;
+
+}
+.product-list>ul>li{
+    float: left;
+    padding: 20px;
+    width: calc(100%/3);
+    box-sizing: border-box;
+}
+.product-list>ul>li>a{
+    text-decoration: none;
+    display: block;
+    padding-bottom: 30px;
+}
+.product-list>ul>li>a:hover{
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+}
+.product-list>ul>li>a>.img-box{
+    width: 90%;
+    margin: 0 auto;
+}
+.product-list>ul>li>a>.img-box>img{
+    width: 100%;
+}
+.product-list>ul>li>a>.info{
+    width: 70%;
+    margin: 0 auto;
+}
+.flavor{
+    font-size: 24px;
+    font-weight: bold;
+}
+.price{
+    font-size: 22px;
+    color: var(--color4);
+    font-weight: bold;
+}
+.star{
+    overflow: hidden;
+}
+.star>span{
+    float: left;
+    color: gold;
+}

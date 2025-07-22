@@ -1,0 +1,337 @@
+/*
+#9ECAD6 연파
+#748DAE 파
+#F5CBCB 분
+#FFEAEA 연분
+#09122C 껌
+#7B4019 초코
+*/
+@font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+:root{
+    --color1 : #09122C;
+    --color2 : #D9A299;
+    --color3 : #9ECAD6;
+    --color4 : #f58282;
+    --color5 : #FAF7F3;
+    --color6 : #7B4019;
+}
+*{
+    margin : 0;
+    padding: 0;
+    outline: none;
+    color: var(--color1);
+    font-family: 'MangoDdobak-B';
+
+}
+*::selection{
+    background-color: var(--color4);
+    color: var(--color5);
+}
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+.header-top{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.logo{
+    width: 300px;
+    height: 100px;
+    float: left;
+}
+.logo>a{
+    font-size : 60px;
+    line-height: 100px;
+    font-weight: 900;
+    color: var(--color6);
+    text-decoration: none;
+}
+.search-box{
+    width: 600px;
+    height: 100px;
+    float: left;
+}
+.search-box>form{
+    text-align: center;
+    line-height: 100px;
+}
+.search-box>form>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search-box>form>button>span{
+}
+.search-box>form>input{
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid var(--color4);
+    font-size: 17px;
+}
+.search-box>form>input:focus{
+    border-bottom: 2px solid var(--color2);
+}
+.link-box{
+    width: 300px;
+    height: 100px;
+    float: left;
+    text-align: right;
+}
+.link-box>a{
+    line-height: 100px;
+    margin-left: 25px ;
+    font-weight: 900;
+    text-decoration: none;
+}
+.link-box>a:hover{
+    color: var(--color2);
+}
+.nav{
+    background-color: var(--color5);
+}
+.nav>ul{
+    overflow: hidden;
+    list-style-type: none;
+    width : 1200px;
+    margin : 0 auto;
+}
+.nav>ul>li{
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.nav>ul>li>a{
+    color: var(--color6);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+.nav>ul>li>a:hover{
+    color: var(--color4)
+}
+
+
+.footer{
+    background-color: var(--color5);
+}
+.footer>div{
+    width : 1200px;
+    margin: 0 auto;
+    padding: 30px 0px;
+}
+.footer>p{
+    padding: 5px 0px;
+    font-size : 14px;
+    color : var(--color5);
+}
+/* header, footer 작업 끝*/
+.content{
+    width : 1200px;
+    margin : 0 auto;
+    padding-top: 140px;
+    padding-left: 30px;
+    overflow: hidden;
+}
+.cart-left{
+    float: left;
+}
+/* 장바구니 */
+.cart-title{
+    text-align: center;
+    padding-top : 40px;
+    padding-bottom : 50px;
+    font-size: x-large;
+}
+.cart-select{
+    width: 700px;
+    box-sizing: border-box;
+    padding: 26px;
+    overflow: hidden;
+    border: 3px solid #D9A299;
+    border-radius: 10px;
+    line-height: 120% ;
+}
+[name="productCheck"]{
+    appearance: none;
+    box-sizing: border-box;
+    background-clip: content-box;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border : 2px solid gainsboro;
+    border-radius: 4px;
+    padding : 0.25em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+[name="productCheck"]:checked{
+    border-color: var(--color2);
+    background-color: #f58282;
+}
+#all-select{
+    float: left;
+}
+
+.cart-select>label{
+    display: inline-block;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 22px;
+}
+.cart-select>label:hover{
+    color: var(--color2);
+}
+.delete{
+    border: 3px solid var(--color4);
+    border-radius: 5px;
+    width: 80px;
+    background-color: transparent;
+    float: right;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}
+.delete:active{
+    background-color: var(--color4);
+    color: white;
+}
+
+/*상품목록*/
+.cart-list-wrap{
+    width: 700px;
+    box-sizing: border-box;
+    margin: 25px 0px 100px 0px;
+    padding: 15px;
+    border: 3px solid #D9A299;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.product{
+    overflow: hidden;
+    padding: 10px 10px;
+    border-bottom: 1px solid gainsboro;
+}
+.check{
+    float: left;
+    width: 30px;
+    height : 100px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.check input[type="checkbox"] {
+    margin-top: 40px;
+}
+.product-attri>{
+    float: left;
+    width: 650px;
+}
+.product-attri>img{
+    width: 110px;
+    vertical-align: middle;
+}
+.product-attri>a{
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: none;
+
+}
+.product-attri>a:hover{
+    color: var(--color2);
+}
+.product-attri a, .product-attri button{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.product-attri>h4{
+    margin-top: -30px;
+    text-align: right;
+}
+.product-attri>.count{
+    float: right;
+}
+.option-select{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding : 3px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.option-select:active{
+    border: 1px solid transparent;
+    background-color: gainsboro;
+    color: white;
+
+}
+.count{
+    margin: 8px 0px;
+    border: 1px solid var(--color4);
+    border-radius: 6px;
+}
+.count>button{
+    border: 2px solid gainsboro;
+    border-radius: 3px;
+    width: 20px;
+    padding : 1px;
+    margin : 3px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.count>button:active{
+    border: 2px solid transparent;
+    background-color: var(--color4);
+    color: white;
+}
+/*
+*/
+.cart-remote{
+    width: 400px;
+    float: right;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 3px solid #D9A299;
+    border-radius: 10px;
+}
+.remote-title{
+    margin-bottom: 25px;
+}
+.remote-content>*{
+    margin-bottom: 15px;
+}
+.remote-content p,.remote-content>.total{
+    text-align: right;
+}
+.total{
+    font-size: 21px;
+}
+.remote-button>form{
+    text-align: center;
+}
+.remote-button>form>input{
+    padding: 10px;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    border: 3px solid var(--color4);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    line-height: 100%;
+    font-size: large;
+    font-weight:bold;
+}
+.remote-button>form>input:active{
+    border: 3px solid transparent;
+    background-color: var(--color4);
+    color: white;
+}

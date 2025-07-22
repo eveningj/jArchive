@@ -1,0 +1,40 @@
+.linear{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+.gra1{
+    background: linear-gradient(#0000ff,#ffffff);
+}
+.gra2{
+    background: linear-gradient(to left,#0000ff,#ffffff);
+}
+.gra3{
+    background : linear-gradient(135deg,#0000ff,#ffffff)
+}
+.gra4{
+    background: linear-gradient(90deg,#0000ff,#0f0 30%,#00ffff 60%,#ffffff);
+}
+.gra5{
+    background: repeating-linear-gradient(90deg,#0000ff,#ffffff 20%);
+}
+.gra6{
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.circle{
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+}
+.gra7{
+    background: radial-gradient(#ffffff,#0000ff);
+}
+.gra8{
+    background: radial-gradient(circle,#ffffff,#0000ff);
+}
+.gra9{
+    /*브라우저 접두사* -> 크롬, 사파리*/
+    background: -webkit-radial-gradient(30% 40%,circle,#ffffff,#0000ff);
+}

@@ -1,0 +1,32 @@
+
+/* 별 선택자 
+*{
+    color: mediumslateblue;
+}*/
+
+/* 태그 선택자
+p{
+    color : chocolate
+}
+h2{
+    color:darkslateblue
+}*/
+
+/*아이디 선택자*/
+/*#li3{
+    color:brown;
+}
+#li5{
+    color:blue;
+}
+    */
+
+.li3{
+    color: darkslategray;
+}
+.li1{
+    color: navajowhite;
+}
+.li5{
+    background-color: royalblue;
+}
