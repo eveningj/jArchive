@@ -1,0 +1,112 @@
+/* 폰트 */
+@font-face {
+    font-family: 'HANAMDAUM';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.header{
+   font-family: 'HANAMDAUM';
+   padding: 25px;
+   overflow: hidden;
+   border: 1px solid whitesmoke;
+}
+.header-title{
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.logo{
+    float: left;
+}
+
+
+.member-box{
+    font-size: 13px;
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    top : -20px
+}
+.member-box>.material-icons-outlined{
+    font-size: 23px;
+}
+.member-box>a{
+    margin-right: 15px;
+}
+
+
+.item-title{
+    display: inline-block;
+}
+.item-title>a{
+    font-size: 25px;
+    margin-right: 30px;
+    font-weight: bold;
+    position: relative;
+    top : -10px;
+    border-bottom: 5px solid transparent;
+}
+.item-title>a:hover{
+    border-bottom : 5px solid #FF7A30;
+}
+
+.search-box{
+    float: right;
+    position: relative;
+    top : -10px
+}
+.search-box>input{
+    border: 1px solid transparent;
+    border-bottom: 3px solid gainsboro;
+    width: 400px;
+    outline: transparent;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    position: relative;
+    top : -12px;
+    font-family: 'MaruBuri';
+    font-weight: 600;
+}
+.search-box>span{
+    font-size: 30px;
+    margin: 0px 15px;
+}
+.menu-box {
+    overflow: hidden;
+}
+
+.menu-box li{
+    list-style-type: none;
+    float: left;
+    margin-right: 50px;
+    border-bottom: 4px solid transparent;
+}
+.menu-box li:hover{
+    border-bottom : 4px solid #FF7A30;
+}
+.category{
+    overflow: hidden;
+    font-family: 'MaruBuri';
+}
+.category>ul{
+    width : 200px;
+    float :left;
+    font-weight: 600;
+    font-size: 18px;
+}
+.category li{
+    text-indent: 10px;
+    list-style-type: none;
+    font-size : 14px;
+}
