@@ -1,112 +1,250 @@
-/* 폰트 */
+/* 폰트*/
 @font-face {
-    font-family: 'HANAMDAUM';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
-    font-weight: 400;
+	font-family: 'HANAMDAUM';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'MaruBuri';
+	src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+	src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+}
+/*로고*/
+@font-face {
+    font-family: 'OG_Renaissance_Secret-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/OG_Renaissance_Secret-Rg.woff2') format('woff2');
+    font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'MaruBuri';
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+a {
+	text-decoration: none;
+	color: black;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
-.header{
-   font-family: 'HANAMDAUM';
-   padding: 25px;
-   overflow: hidden;
-   border: 1px solid whitesmoke;
-}
-.header-title{
-    overflow: hidden;
-    margin-bottom: 15px;
+body {
+	margin: 0;
 }
 
-.logo{
-    float: left;
+.all-wrap{
+    max-width: 1440px;
+    margin : 0 auto;
+    padding:  0 20px;
+}
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	z-index: 1000;
+	font-family: 'HANAMDAUM';
+	padding: 25px;
+    width : 100%;
 }
 
-
-.member-box{
-    font-size: 13px;
-    float: right;
-    margin-right: 10px;
-    position: relative;
-    top : -20px
-}
-.member-box>.material-icons-outlined{
-    font-size: 23px;
-}
-.member-box>a{
-    margin-right: 15px;
+.header-title {
+	overflow: hidden;
+	margin-bottom: 8px;
 }
 
+#logo {
+    font-family: 'OG_Renaissance_Secret-Rg';
+	float: left;
+	font-size: 45px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+#logo:hover {
+	transform: scale(1.01);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-.item-title{
+.member-box {
+	font-size: 13px;
+	float: right;
+	margin-right: 50px;
+    margin-top : 15px;
+	position: relative;
+	top: 0;
+}
+
+.member-box > .material-icons-outlined,
+.member-box > a {
     display: inline-block;
-}
-.item-title>a{
-    font-size: 25px;
-    margin-right: 30px;
-    font-weight: bold;
+    font-size: 14px;
     position: relative;
-    top : -10px;
-    border-bottom: 5px solid transparent;
-}
-.item-title>a:hover{
-    border-bottom : 5px solid #FF7A30;
+    top: 2px; 
 }
 
-.search-box{
-    float: right;
-    position: relative;
-    top : -10px
+.member-box>a{
+    margin-right: 20px;
 }
-.search-box>input{
-    border: 1px solid transparent;
-    border-bottom: 3px solid gainsboro;
-    width: 400px;
-    outline: transparent;
-    padding-left: 15px;
-    padding-bottom: 5px;
-    position: relative;
-    top : -12px;
-    font-family: 'MaruBuri';
-    font-weight: 600;
+
+.member-box > a:hover{
+    text-decoration: underline;
+    text-decoration-color: #465C88;
 }
-.search-box>span{
-    font-size: 30px;
-    margin: 0px 15px;
+.member-box > .material-icons-outlined:hover {
+    color : #465C88; 
+    cursor: pointer;
 }
+
+.item-title {    
+    vertical-align: middle;
+	margin-bottom: 5px;
+}
+
+.item-title > a {
+	font-size: 30px;
+	margin-right: 40px;
+	font-weight: bold;
+	border-bottom: 3px solid transparent;
+}
+
+.item-title > a:hover {
+	border-bottom: 3px solid #FF7A30;
+}
+
+.search-box {
+	float: right;
+    margin-top: -50px;
+    margin-right: 100px;
+}
+
+.search-box > input {
+	border: none;
+	border-bottom: 2px solid gainsboro;
+	width: 400px;
+	padding: 5px 10px;
+	font-family: 'MaruBuri';
+	font-weight: 600;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-box > span {
+	font-size: 26px;
+	margin-left: 10px;
+    cursor: pointer;
+}
+.search-box > span:hover {
+    color: #FF7A30;
+}
+
+.menu-wrapper {
+	position: relative;
+	padding: 8px;
+    background-color: white;
+}
+.menu-wrapper:hover .category {
+	display: block;
+}
+
 .menu-box {
-    overflow: hidden;
+	overflow: hidden;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 5px;
 }
 
-.menu-box li{
-    list-style-type: none;
-    float: left;
-    margin-right: 50px;
-    border-bottom: 4px solid transparent;
+.menu-box ul {
+	margin: 0;
+	padding: 0;
 }
-.menu-box li:hover{
-    border-bottom : 4px solid #FF7A30;
+
+.menu-box li {
+	position: relative;
+	float: left;
+	list-style: none;
+	margin-right: 45px;
+	padding: 5px 10px;
+	font-size: 15px;
+	border-bottom: 2px solid transparent;
+	cursor: pointer;
 }
-.category{
+
+.menu-box li:hover {
+	border-bottom: 2px solid #FF7A30;
+}
+.category {
+	display: none;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	background-color: white;
+    border-bottom:  1px solid gainsboro;
+	padding: 20px;
+	font-family: 'MaruBuri';
+    cursor: default;
+    width : 1440px;
+	z-index: 999;
+}
+
+.category-box {
+	float: left;
+	width: 180px;
+	margin-right: 30px;
+}
+
+.category-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.category-box ul {
+	padding-left: 10px;
+	margin: 0;
+}
+
+.category-box li {
+	list-style: none;
+	font-size: 14px;
+	margin-bottom: 4px;
+}
+
+.category-box li:hover {
+    font-style: italic;
+}
+
+.footer{
     overflow: hidden;
-    font-family: 'MaruBuri';
+    position: relative;
+    margin-top:  200px;
+    border-top: 1px solid gainsboro;
 }
-.category>ul{
-    width : 200px;
-    float :left;
-    font-weight: 600;
-    font-size: 18px;
+h4{
+    margin-bottom : 0px;
 }
-.category li{
+.footer a{
+    display: block;
+    font-size: 11px;
+    margin : 10px;
+    overflow: hidden;
+}
+.footer p{
+    display: block;
+    font-size: 10px;
     text-indent: 10px;
-    list-style-type: none;
-    font-size : 14px;
+}
+.footer-box{
+    float: left;
+    padding-right: 70px;
+    padding-left: 40px;
+}
+.sns-box{
+    float: right;
+    display: inline-block;
+    padding-top: 25px;  
+    padding-right: 30px;
+    margin-right: 50px;
+}
+.sns-box a {
+    display: inline-block; 
+    margin-left: 20px;
 }

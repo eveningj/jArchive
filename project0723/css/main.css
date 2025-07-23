@@ -1,0 +1,98 @@
+
+@font-face {
+	font-family: 'HANAMDAUM';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'MaruBuri';
+	src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+	src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"),
+		 url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+}
+
+
+.content-box {
+	width: 100%;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.content-box h1{
+    display: inline-block;
+    width: 250px;
+    border-bottom: 1px solid #ff7a30;
+    margin-top: 200px;
+}
+.new-product-list {
+	display: inline-block;
+}
+
+.product {
+	display: inline-block;
+	width: 300px;
+	margin: 40px;
+	text-align: center;
+	font-family: 'MaruBuri';
+    transition: 0.3s;
+}
+.product:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+	border-color: #ff7a30;
+}
+
+.img-wrap {
+	position: relative;
+	display: inline-block;
+}
+
+.img-wrap img {
+	width: 100%;
+	height: auto;
+}
+
+.heart {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	font-size: 24px;
+	color: #ff7a30;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 50%;
+	padding: 4px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.product-title{
+	font-size: 18px;
+	margin: 12px 0 8px;
+}
+
+.price-info {
+	width: 100%;
+    overflow: hidden;
+}
+
+.product-discount {
+	color: #ff7a30;
+    float: left;
+	font-weight: bolder;
+	margin-left: 10px;
+	display: inline-block;
+    cursor: default;
+}
+
+.product-price {
+	display: inline-block;
+	text-align: right;
+	margin: 0 2px;
+	float: right;
+	position: relative;
+	font-weight: bold;
+    cursor: default;
+}
