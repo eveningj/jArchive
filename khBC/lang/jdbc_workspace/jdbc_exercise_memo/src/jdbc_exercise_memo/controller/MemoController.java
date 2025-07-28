@@ -1,0 +1,107 @@
+package jdbc_exercise_memo.controller;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import jdbc_exercise_memo.model.service.MemoService;
+import jdbc_exercise_memo.model.vo.Memo;
+
+public class MemoController {
+
+	Scanner sc;
+	MemoService memoService;
+	
+	public MemoController() {
+		super();
+		sc = new Scanner(System.in);
+		memoService = new MemoService();
+	}
+	
+	public void main() {
+		while(true) {
+		System.out.println("\n------- 메모장 -------\n");
+		System.out.println("1. 전체 메모 보기");
+		System.out.println("2. 작성자로 메모 조회");
+		System.out.println("3. 메모 등록");
+		System.out.println("4. 메모 삭제");
+		System.out.println("0. 종료");
+		int select = sc.nextInt();
+		
+		switch (select) {
+		case 1:
+			selectAllMemo();
+			break;
+		case 2:
+			selectMemoByWriter();
+			break;
+		case 3:
+			insertMemo();
+			break;
+		case 4:
+			deleteMemo();
+			break;
+		case 0:
+			System.out.println("끝");
+			return;
+		default:
+			System.out.println("잘못된 입력");
+			break;
+		}
+		}
+	}//m();
+	
+	public void selectAllMemo() {
+		ArrayList<Memo> list = memoService.selectAllMemo();
+		if (list.isEmpty()) {
+			System.out.println("메모 같은거 없음.");
+		}else {
+		System.out.println("\n---------- 전체 메모 조회 ----------\n");
+		System.out.println();
+		System.out.println("ID\t작성자\t작성일\t\t내용");
+		for (Memo m : list) {
+			System.out.println(m.getMemoId()+"\t"+m.getMemoWriter()+"\t"+m.getWriteDate()+"\t"+m.getMemoContent());
+		}
+		}
+	}//m();
+	
+	public void selectMemoByWriter() {
+		System.out.print("작성자 입력 : ");
+		String writer = sc.next();
+		
+		ArrayList<Memo> list = memoService.selectMemoByWriter(writer);
+		if (list.isEmpty()) {
+			System.out.println("없음");
+		}else {
+			System.out.println("ID\t작성자\t작성일\t\t내용");
+			for (Memo m : list) {
+				System.out.println(m.getMemoId()+"\t"+m.getMemoWriter()+"\t"+m.getWriteDate()+"\t"+m.getMemoContent());
+			}
+		}
+	}//m();
+	
+	public void insertMemo() {
+		System.out.println("작성자 입력 : ");
+		String writer = sc.next();
+		System.out.println("메모 내용 입력 : ");
+		String memoContent = sc.next();
+		
+		int result = memoService.insertMemo(writer,memoContent);
+		if (result>0) {
+			System.out.println("메모 작성 완료");
+		}else {
+			System.out.println("메모 작성 실패");
+		}
+	}//m();
+	
+	public void deleteMemo() {
+		System.out.println("삭제할 메모 id 입력 : ");
+		int memoId = sc.nextInt();
+		
+		int result = memoService.deleteMemo(memoId);
+		if (result>0) {
+			System.out.println("삭제 성공");
+		}else {
+			System.out.println("삭제 실패");
+		}
+	}//m();
+}

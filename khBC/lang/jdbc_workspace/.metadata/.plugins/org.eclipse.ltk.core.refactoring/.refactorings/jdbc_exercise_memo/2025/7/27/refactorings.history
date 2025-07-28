@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;jdbc_exercise_memo.model.service.MemoStart&apos; to &apos;MemoService&apos;&#x0D;&#x0A;- Original project: &apos;jdbc_exercise_memo&apos;&#x0D;&#x0A;- Original element: &apos;jdbc_exercise_memo.model.service.MemoStart&apos;&#x0D;&#x0A;- Renamed element: &apos;jdbc_exercise_memo.model.service.MemoService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MemoStart&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;jdbc_exercise_memo.model.service{MemoStart.java[MemoStart" matchStrategy="1" name="MemoService" qualified="false" references="true" similarDeclarations="false" stamp="1751528802264" textual="false" version="1.0"/>
+</session>
