@@ -54,5 +54,27 @@ $(".btn").on("click",function(){
         let lvl = $(item).parent().children("span").last().text();
         span.text(Number(lvl)+1);
     })
-    
+});
+
+/*$(".levelup button").on("click",function(){
+    const i = $(this).index(this);
+    const levelSpans = $(".levelup>div>span:last-child");
+    const currentLevelSpan = levelSpan.eq(i);
+    const currentLevel = currentLevelSpan.text();
+    const nextLevel = currentLvel + 1;
+    currentLvelSpan.text(nextLevel);
+})
+    */
+
+const buttons = $(".levelup button");
+$("#btn6").on("click",function(){
+    /*$(".btn").each(function(i,item){
+        const span = $(item).parent().children("span").last();
+        let lvl = $(item).parent().children("span").last().text();
+        span.text(Number(lvl)+1);
+    })*/
+
+    buttons.trigger("click");
+    //or
+    //buttons.click();
 });
