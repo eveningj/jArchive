@@ -1,0 +1,73 @@
+package kr.co.iei.model.service;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import kr.co.iei.common.JDBCTemplate;
+import kr.co.iei.model.dao.MemberDao;
+import kr.co.iei.model.vo.Member;
+
+public class MemberService {
+	private MemberDao memberDao;
+	
+	
+	public MemberService() {
+		super();
+		memberDao = new MemberDao();
+	}
+
+
+	public ArrayList<Member> selectAllMember() {
+		Connection conn = JDBCTemplate.getConnection();
+		ArrayList<Member> list = MemberDao.selectAllMember(conn);
+		JDBCTemplate.close(conn);
+		return list;
+	}
+
+
+	public int insertMember(Member m) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = memberDao.insertMember(conn,m);
+		if (result >0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
+
+	public Member searchMemberId(String memberId) {
+		Connection conn = JDBCTemplate.getConnection();
+		Member m = MemberDao.searchMemberId(conn,memberId);
+		JDBCTemplate.close(conn);
+		return m;
+	}
+
+
+	public int deletehMember(String memberId) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = memberDao.deletetMember(conn,memberId);
+		if (result >0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+	
+	public int updateMember(Member m) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = memberDao.updateMember(conn,m);
+		if (result >0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
+}
