@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Thymeleaf 기본형 데이터 출력</h1>
+	<hr>
+	<h3 th:text = "${str}"></h3>
+	<h3 th:text = "${num1}"></h3>
+	<h3 th:text = "${num2}">여기에 글씨가 있어도?</h3>
+	<hr>
+	<!--
+	
+		<input type = "text" name = "test" value = "<%=str%>"> 
+	 -->
+	 <input type = "text" name = "test" th:value  = "${str}" th:id="${str}">
+	 <h3 th:text = "${num1 + num2}">연산도 가능.</h3>
+	 <h3 th:text = "${num1} + ${num2}">분할하여 연산도 가능.</h3>
+	 <h3 th:text = "${num1} + ${num2} + ${str}">java 더하기하듯 숫자+숫자+문자열도 가능.</h3>
+	 <h3 th:text = "${num1} + ${str} + ${num2}">java 더하기하듯 문자열로 모두 더하기. (순서)</h3>
+	 <h3 th:text = "${num1} + ${str} + ${num2} + '이것도 더해짐'">java 더하기하듯 문자열로 모두 더하기. (순서)</h3>
+</body>
+</html>
