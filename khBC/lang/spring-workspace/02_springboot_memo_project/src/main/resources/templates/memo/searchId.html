@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		margin-bottom : 10px;
+	}
+	table{
+		border-spacing: 0;
+		border-top : 2px solid #000;
+	}
+	table th{
+		text-align: center;
+		background-color : #eee;
+	}
+	table th, table td{
+		padding : 5px 40px;
+		border-bottom : 1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+	<h1>메모 상세보기</h1>
+	<table>
+	<tr>
+		<th>메모번호</th>
+		<td th:text = "${memo.memoId}">
+		<input type = "hidden" name = "memoId" th:value = "${memo.memoId}" >
+	</tr>
+	<tr>
+		<th>제목</th>
+		<td th:text = "${memo.memoTitle}">
+	</tr>
+	<tr>
+		<th>작성자</th>
+		<td th:text = "${memo.memoWriter}">
+	</tr>
+	<tr>
+		<th>작성일</th>
+		<td th:text = "${memo.writeDate}">
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td th:text = "${memo.memoContent}">
+	</tr>
+	<tr>
+		<td colspan = "2" style="text-align: center;" >
+			<a th:href= "@{/memo/modifyFrm(memoId=${memo.memoId})}">수정</a>
+			<a th:href = "@{/memo/deleteMemo(memoId=${memo.memoId})}">삭제</a>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

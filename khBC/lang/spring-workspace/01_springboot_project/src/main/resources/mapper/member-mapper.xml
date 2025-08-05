@@ -2,7 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.co.iei.member.model.dao.MemberDao">
 	<!-- 주석 -->
-	<select id = "selectAllMember" resultType = "kr.co.iei.member.model.vo.Member">
-		select * from member_tbl order by 1 desc
+	<select id = "selectAllMember" resultType = "member">
+		select * from member_tbl order by 1 asc
+	</select>
+	
+	<!-- mybatis Mapping 은 argument 하나만. -->
+	<insert id = "insertMember" >
+		<!-- insert/update/delete 는 수행 결과가 무조건 int 로 정해져있으므로 resultType을 작성하지 않음. -->
+		insert into member_tbl 
+    values (
+        member_seq.nextval,
+        #{memberId},
+        #{memberPw},
+        #{memberName},
+        #{memberPhone},
+        #{memberAddr},
+        TO_CHAR(SYSDATE, 'YYYY-MM-DD'),
+        3
+    )
+	</insert>
+	<select id = "searchId" resultType = "member">
+		select * from member_tbl where member_id = #{memberId}
 	</select>
 </mapper>

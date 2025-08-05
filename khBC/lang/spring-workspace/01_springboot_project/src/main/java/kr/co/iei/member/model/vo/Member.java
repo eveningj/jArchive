@@ -13,10 +13,11 @@ import lombok.NoArgsConstructor;
 
 public class Member {
 	private int memberNo;
+	private String memberId;
 	private String memberPw;
 	private String memberName;
 	private String memberPhone;
 	private String memberAddr;
-	private int memberLevel;
+	private int userLevel;
 	private String enrollDate;
 	}

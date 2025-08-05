@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title><style>
+	div{
+		margin-bottom : 10px;
+	}
+	table{
+		border-left : none;
+		border-right: none;
+		border-spacing: 0;
+		border-top : 2px solid #000;
+	}
+	table tr{
+		border-left : none;
+		border-right: none;
+	}
+	table th{
+		text-align: center;
+		background-color : #eee;
+		border-bottom: none;
+	}
+	table th, table td{
+		padding : 5px 20px;
+		border-bottom : 1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+	<h1>전체 메모 목록</h1>
+	<hr>
+	<div>
+		<a href = "/memo/insertMemoFrm">메모 작성하기</a>
+	</div>
+	<div>
+		<form action = "/memo/searchMemo" method = "get" >
+		<input type = "text" placeholder = "작성자를 입력하세요" name = "memoWriter" id = "memoWriter">
+		<input type = "submit" value = "조회">
+	</form>
+	</div>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>내용</th>
+			<th>작성자</th>
+			<th>작성일</th>
+		</tr>
+		<tr th:each = "memo: ${list}">
+			<td th:text = "${memo.memoId}"></td>
+			<td><a th:href = "@{/memo/searchMemoId(memoId=${memo.memoId})}"
+			 th:text ="${memo.memoTitle}"></a></td>
+			<td th:text = "${memo.memoContent}"></td>
+			<td th:text = "${memo.memoWriter}"></td>
+			<td th:text = "${memo.writeDate}"></td>
+		</tr>
+	</table>
+	<a href = "/">메인</a>
+
+</body>
+</html>

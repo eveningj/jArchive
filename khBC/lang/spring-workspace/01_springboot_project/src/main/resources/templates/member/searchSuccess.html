@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원 정보</h1>
+	<hr>
+	<table >
+		<tr>
+			<th th:text = "${m.memberId}"></th>
+		</tr>
+		<tr>
+			<td th:text = "${m.memberName}"></td>
+			<td th:text = "${m.memberPhone}"></td>
+			<td th:text = "${m.memberAddr}"></td>
+			<td th:switch = "${m.userLevel}">
+				<span th:case = "1">관리자</span>
+				<span th:case = "1">정회원</span>
+				<span th:case = "1">준회원</span>
+			</td>
+			<td th:text = "${m.enrollDate}"></td>
+		</tr>
+	</table>
+</body>
+</html>

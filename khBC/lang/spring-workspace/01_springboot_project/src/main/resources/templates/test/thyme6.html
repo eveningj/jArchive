@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Thymeleaf each 테스트</h1>
+	<hr>
+	<h4 th:each = "num : ${list1}" th:text = "${num}"></h4>
+	<hr>
+	<th:block th:each = "num1 : ${list1}">
+		<h5 th:text="${num1}"></h5>
+	</th:block>
+	<hr>
+	<!--  for (Student s : list2){} -->
+	<th:block th:each = "s : ${list2}">
+		<ul>
+			<li th:text = "${s.name}"></li>
+			<li th:text = "${s.age}"></li>
+			<li th:text = "${s.addr}"></li>
+		</ul>
+	</th:block>
+	<hr>
+	<ul th:each = "s, status : ${list2}">
+		<li th:text = "${s.name}"></li>
+		<li th:text = "${status.index}"></li>
+		<li th:text = "${status.count}"></li>	<!-- Counting  -->
+		<li th:text = "${status.size}"></li>	<!-- ListSize -->
+		<li th:text = "${status.even}"></li>	<!-- 짝수번째인지 -->
+		<li th:text = "${status.odd}"></li>		<!-- 홀수번째인지 -->
+		<li th:text = "${status.first}"></li>	<!-- 첫번째인지  -->
+		<li th:text = "${status.last}"></li>	<!-- 마지막인지 -->
+		<li th:text = "${status.current}"></li>	<!-- 현재 회차 toString, s. -->
+	</ul>
+	<hr>
+	<p th:each = "num : ${#numbers.sequence(1,5)}" th:text = ${num}></p>
+</body>
+</html>

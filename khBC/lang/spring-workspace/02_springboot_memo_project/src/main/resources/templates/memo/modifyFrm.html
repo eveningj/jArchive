@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		margin-bottom : 10px;
+	}
+	table{
+		border-spacing: 0;
+		border-top : 2px solid #000;
+	}
+	table th{
+		text-align: center;
+		background-color : #eee;
+	}
+	table th, table td{
+		padding : 5px 40px;
+		border-bottom : 1px solid #ccc;
+	}
+	table>tbody>tr>td>[name=memoContent]{
+    height: 100px;
+    width : 200px;
+}
+</style>
+</head>
+<body>
+	<h1>메모 수정</h1>
+	<hr>
+	<form action="/memo/modifyMemo" method="post">
+		<div>
+			<table>
+				<tr>
+					<th>
+						<label for="memoId">메모번호</label>
+					</th>
+					<td>
+						<span th:text = "${memo.memoId}"></span>
+						<input type = "hidden" name = "memoId" th:value = "${memo.memoId}" >
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="memoTitle">제목</label>
+					</th>
+					<td>
+						<input type = "text" name = "memoTitle" th:value = "${memo.memoTitle}">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="memoWriter">작성자</label>
+					</th>
+					<td>
+						<input type = "text" name = "memoWriter" th:value = "${memo.memoWriter}" disabled>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="writeDate">작성일</label>
+					</th>
+					<td>
+						<input type = "text" name = "writeDate" th:value = "${memo.writeDate}" disabled>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label for="memoContent">내용</label>
+					</th>
+					<td>
+						<input type = "text" name = "memoContent" th:value = "${memo.memoContent}">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2" style="text-align: center;">
+						<input type="submit" value="수정하기">	
+					</th>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<a href = "/">메인으로</a>
+</body>
+</html>

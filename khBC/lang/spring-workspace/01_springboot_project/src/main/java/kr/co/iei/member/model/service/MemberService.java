@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.iei.member.model.dao.MemberDao;
 import kr.co.iei.member.model.vo.Member;
@@ -17,6 +18,16 @@ public class MemberService {
 	public List selectAllMember() {
 		List list = memberDao.selectAllMember();
 		return list;
+	}
+
+	@Transactional
+	public int insertMember(Member m) {
+		int result = memberDao.insertMember(m);
+		return result;
+	}
+
+	public Member searchId(String memberId) {
+		return memberDao.searchId(memberId);
 	}
 
 }
