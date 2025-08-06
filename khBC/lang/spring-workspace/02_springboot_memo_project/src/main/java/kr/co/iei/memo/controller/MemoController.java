@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.swagger.annotations.Api;
 import kr.co.iei.memo.model.service.MemoService;
 import kr.co.iei.memo.model.vo.Memo;
 
 @Controller
 @RequestMapping(value = "/memo")
+@Api(value = "Memo Management", description = "메모 관리 웹 컨트롤러")
 public class MemoController {
 
 	@Autowired

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="/css/default.css" />
+<style>
+	#check-container{
+		width : 600px;
+		height : 300px;
+		display : flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#check-container>div{
+		padding :50px;
+		border-radius : 12px;
+		background-color : var(--gray8);
+	}
+</style>
+</head>
+<body>
+	<div id = "check-container">
+		<th:block th:if = "${result == 0}">
+			<div>
+				<div style = "margin-bottom : 10px;">[<span id = "resultId" th:text = "${memberId}"></span>]는 사용 가능한 아이디 입니다.</div>
+				<button type = "button" class = "btn-primary" id = "close-btn">닫기</button>
+			</div>
+			<script>
+				$("#close-btn").on("click",function(){
+					const memberIdInput = $("#memberId",opener.document); //부모창에서 아이디가 memberId 인 요소
+					const resultId = $("#resultId").text();
+					memberIdInput.val(resultId);
+					
+					const idCheckMsg = $(".id-check-msg", opener.document);
+					idCheckMsg.removeClass("valid").removeClass("invalid");
+					idCheckMsg.text("아이디 중복체크 완료")
+					idCheckMsg.addClass("valid");
+					self.close();//현재 창 닫는 명령어
+				});
+			</script>
+		</th:block>
+		<th:block th:if = "${result == 1}">
+			<div>
+				<div style = "margin-bottom : 10px;">[<span th:text = "${memberId}"></span>]는 이미 사용중인 아이디 입니다.</div>
+				<form action = "/member/checkId" method = "get">
+					<input type = "text" name = "checkId" th:value = "${memberId}">
+					<button type = "submit" class = "btn-primary">조회</button>
+				</form>
+			</div>
+		</th:block>
+	</div>
+</body>
+</html>

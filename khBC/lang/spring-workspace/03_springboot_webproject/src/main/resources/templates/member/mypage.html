@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>마이페이지</title>
+<style>
+	.mypage-wrap{
+		width:800px;
+		margin : 0 auto;
+	}
+	.my-info-wrap{
+		width:80%;
+		margin : 0 auto;
+	}
+	.my-info-wrap .input-item>input{
+		padding : 0;
+		border-bottom : none;
+	}
+	.mypage-btn{
+		display : flex;
+		justify-content: center;
+		gap : 50px;
+		padding: 30px 0px;
+	}
+</style>
+</head>
+<body>
+	<th:block th:include = "common/header"></th:block>
+	<main class = "content">
+		<section class = "section mypage-wrap">
+			<div class = "page-title">마이페이지</div>
+			<div class = "my-info-wrap">
+				<form action = "/member/update" method = "post">
+					<table class = "tbl">
+						<tr>
+							<th width = "30%">회원번호</th>
+							<td width = "70%" class = "left" th:text = "${member.memberNo}"></td>
+						</tr>
+						<tr>
+							<th>아이디</th>
+							<td class = "left" th:text = "${member.memberId}"></td>
+						</tr>
+						<tr>
+							<th>비밀번호</th>
+							<td class = "left">
+								<div class = "input-item">
+									<input type = "password" name = "memberPw" th:value = "${member.memberPw}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td class = "left" th:text = "${member.memberName}"></td>
+						</tr>
+						<tr>
+							<th>전화번호</th>
+							<td class = "left">
+								<div class = "input-item">
+									<input type = "text" name = "memberPhone" th:value = "${member.memberPhone}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>주소</th>
+							<td class = "left">
+								<div class = "input-item">
+									<input type = "text" name = "memberAddr" th:value = "${member.memberAddr}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>회원등급</th>
+							<td class = "left" th:text = "${member.userLevel}"></td>
+						</tr>
+						<tr>
+							<th>가입일</th>
+							<td class = "left" th:text = "${member.enrollDate}"></td>
+						</tr>
+					</table>
+					<div class = "mypage-btn">
+						<input type = "hidden" name = "memberId" th:value = "${member.memberId}">
+						<button type = "submit" class = "btn-primary lg">정보수정</button>
+						<button type = "button" class = "btn-secondary lg">회원탈퇴</button>
+						<a th:if = "${session.member.userLevel == 1}" href = "/admin/allMember" class = "btn-point lg">관리자 페이지</a>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	<th:block th:include = "common/footer"></th:block>
+</body>
+</html>
