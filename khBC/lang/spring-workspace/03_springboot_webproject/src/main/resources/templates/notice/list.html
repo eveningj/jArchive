@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+<style>
+	.list-tbl-wrap{
+		width : 1200px;
+		margin : 0 auto;
+		height : 300px;
+	}
+	#pageNav{
+		margin-top :30px;
+	}
+</style>
+</head>
+<body>
+	<th:block th:include = "common/header"></th:block>
+	<main class = "content">
+		<section class = "section notice-list-wrap">
+			<div class = "page-title">공지사항</div>
+			<div class = "list-tbl-wrap">
+				<table class = "tbl tbl-hover">
+					<tr>
+						<th style = "width : 10%">글번호</th>
+						<th style = "width : 50%">제목</th>
+						<th style = "width : 20%">작성자</th>
+						<th style = "width : 20%">작성일</th>
+					</tr>
+					<tr th:each = "notice : ${list}">
+						<td th:text = "${notice.noticeNo}"></td>
+						<td th:text = "${notice.noticeTitle}"></td>
+						<td th:text = "${notice.noticeWriter}"></td>
+						<td th:text = "${notice.regDate}"></td>
+					</tr>
+				</table>
+			</div>
+			<!--
+				th:text 로 문자열을 넣으면 태그로 동작하지 않고 문자여롤 표현
+				문자열을 태그로 인식시키고 싶으면, th:utext를 사용 
+			 -->
+			<div id = "pageNav" th:utext = "${pageNav}" >
+			</div>
+		</section>
+	</main>
+	<th:block th:include = "common/footer"></th:block>
+</body>
+</html>

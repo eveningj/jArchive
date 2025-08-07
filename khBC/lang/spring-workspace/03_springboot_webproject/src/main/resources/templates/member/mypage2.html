@@ -80,13 +80,47 @@
 					<div class = "mypage-btn">
 						<input type = "hidden" name = "memberId" th:value = "${session.member.memberId}">
 						<button type = "submit" class = "btn-primary lg">정보수정</button>
-						<button type = "button" class = "btn-secondary lg">회원탈퇴</button>
+						<button type = "button" class = "btn-secondary lg del-btn">회원탈퇴</button>
 						<a th:if = "${session.member.userLevel == 1}" href = "/admin/allMember" class = "btn-point lg">관리자 페이지</a>
 					</div>
 				</form>
 			</div>
 		</section>
 	</main>
+	<script src="/js/sweetalert.min.js"></script>
+	<script>
+		$(".del-btn").on("click",function(){
+			swal ({
+				title : "회원 탈퇴",
+				text : "정말 회원을 탈퇴하시겠습니까?",
+				icon : "warning",
+				buttons : {
+					cancel : {
+						text : "취소",
+						value : false,
+						visible : true,
+						className : "btn-secondary",
+						classModal : true
+					},
+					confirm : {
+						text : "확인",
+						value : true,
+						visible : true,
+						className : "btn-primary",
+						classModal : true
+					}
+				}
+			}).then(function(isConfirm){
+				if(isConfirm) {
+					location.href = "/member/delete";
+				}
+			});
+			/*const result = window.confirm("탈퇴하시겠습니까?");
+			if(result) {
+				location.href = "/member/delete";
+			}*/
+		});
+	</script>
 	<th:block th:include = "common/footer"></th:block>
 </body>
 </html>

@@ -1,0 +1,6 @@
+select * from
+(select rownum as rnum, n.* from
+    (select 
+        notice_no, notice_title, notice_writer, reg_date 
+    from notice order by notice_no desc)n)
+where rnum between 21 and 30;

@@ -1,5 +1,8 @@
 package kr.co.iei.member.model.service;
 
+import java.util.List;
+import java.util.StringTokenizer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,4 +36,42 @@ public class MemberService {
 		int result = memberDao.updateMember(m);
 		return result;
 	}
+	
+	@Transactional
+	public int deleteMember(int memberNo) {
+		int result = memberDao.deleteMember(memberNo);
+		return result;
+	}
+
+	public List selectAllMember() {
+		List list = memberDao.selectAllMember();
+		return list;
+	}
+
+	@Transactional
+	public int changeLevel(Member m) {
+		int result = memberDao.changeLevel(m);
+		return result;
+	}
+	
+	@Transactional
+	public boolean checkedChangeLevel(String no, String level) {
+		StringTokenizer sT1 = new StringTokenizer(no, "/");
+		StringTokenizer sT2 = new StringTokenizer(level, "/");
+		int result = 0;
+		int count = sT1.countTokens();
+		while(sT1.hasMoreTokens()) {
+			String stringNo = sT1.nextToken();
+			int memberNo = Integer.parseInt(stringNo);
+			String stringLevel = sT2.nextToken();
+			int userLevel = Integer.parseInt(stringLevel);
+			
+			Member m = new Member();
+			m.setMemberNo(memberNo);
+			m.setUserLevel(userLevel);
+			result += memberDao.changeLevel(m);
+		}
+		return result == count;
+	}
+	
 }
