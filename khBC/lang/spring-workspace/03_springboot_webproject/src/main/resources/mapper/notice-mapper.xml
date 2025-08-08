@@ -15,5 +15,35 @@
 	<select id = "selectNoticeTotalCount" resultType = "int">
 		select count(*) from notice
 	</select>
+	<insert id = "insertNotice">
+		insert into notice values (#{noticeNo}, 
+		#{noticeTitle}, 
+		#{noticeWriter}, 
+		#{noticeContent}, 
+		to_char(sysdate, 'yyyy-mm-dd')
+		)
+	</insert>
+	<insert id = "insertNoticeFile">
+		insert into notice_file values (notice_file_seq.nextval,
+		#{noticeNo},
+		#{filename},
+		#{filepath}		
+		)
+	</insert>
+	<select id = "getNoticeNo" resultType = "int">
+		select notice_seq.nextval from dual
+	</select>
+	
+	<select id = "selectOneNotice" resultType = "notice">
+		select * from notice where notice_no = #{noticeNo}
+	</select>
+	
+	<select id = "selectNoticeFile" resultType = "noticeFile">
+		select * from notice_file where notice_no = #{noticeNo}
+	</select>
+	
+	<select id = "selectOneNoticeFile" resultType = "noticeFile">
+		select * from notice_file where notice_file_no = #{noticeFileNo}
+	</select>
 </mapper>
 

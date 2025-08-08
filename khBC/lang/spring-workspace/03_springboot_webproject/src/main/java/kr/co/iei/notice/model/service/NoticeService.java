@@ -5,8 +5,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.iei.notice.model.dao.NoticeDao;
+import kr.co.iei.notice.model.vo.Notice;
+import kr.co.iei.notice.model.vo.NoticeFile;
 import kr.co.iei.notice.model.vo.NoticeListData;
 
 @Service
@@ -114,5 +117,32 @@ public class NoticeService {
 		
 		NoticeListData nid = new NoticeListData(list, pageNav);
 		return nid;
+	}
+
+	@Transactional
+	public int insertNotice(Notice n, List<NoticeFile> fileList) {
+		int newNoticeNo = noticeDao.getNoticeNo();
+		n.setNoticeNo(newNoticeNo);
+		int result = noticeDao.insertNotice(n);
+		for(NoticeFile noticeFile : fileList) {
+			noticeFile.setNoticeNo(newNoticeNo);
+			result += noticeDao.insertNoticeFile(noticeFile);
+		}
+		return result;
+	}
+
+	public Notice selectOneNotice(int noticeNo) {
+		Notice n = noticeDao.selectOneNotice(noticeNo);
+		if(n != null) {
+			//해당 게시글의 첨부파일
+			List fileList = noticeDao.selectNoticeFile(noticeNo);
+			n.setFileList(fileList);
+		}
+		return n;
+	}
+
+	public NoticeFile selectOneNoticeFile(int noticeFileNo) {
+		NoticeFile noticeFile = noticeDao.selectOneNoticeFile(noticeFileNo);
+		return noticeFile;
 	}
 }
